@@ -3,15 +3,24 @@
 function situacaoAproRepro(array &$alunos){
     foreach($alunos as $chave => $aluno){
         if($aluno["nota"] >= 50){
-            $turma[$chave]["situacao"]  = "aprovado";
+            $alunos[$chave]["situacao"]  = "Aprovado";
         }else{
-            $turma[$chave]["situacao"]  = "reprovado";
+            $alunos[$chave]["situacao"]  = "Reprovado";
         }
     }
 
     return;
 }
 
+function alterarNotaAluno(array &$turma, $nome, $novaNota){
+    foreach($turma as $chave => $aluno){
+        if($aluno["nome"] == $nome){
+            $turma[$chave]["nota"] = $novaNota;
+            return;
+      
+        }
+     }
+}
 
 
 ?>
